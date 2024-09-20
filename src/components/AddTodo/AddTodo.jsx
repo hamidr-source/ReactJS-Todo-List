@@ -3,10 +3,11 @@ import { TodoContext } from "../context/Context";
 
 const AddTodo = () => {
   const [todoValue, setTodoValue] = useState("");
+  const todo = useContext(TodoContext);
 
   function handleSubmit(event) {
     event.preventDefault();
-
+    console.log(todo);
   }
 
   return (
