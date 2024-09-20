@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TodoContext } from "../context/Context";
 
 const AddTodo = () => {
-  const [todo, setTodo] = useState([]);
+  const [todoValue, setTodoValue] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    
-    console.log(todo);
+
   }
 
   return (
@@ -14,10 +14,10 @@ const AddTodo = () => {
       <input
         type="text"
         className="todo-input"
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
+        value={todoValue}
+        onChange={(e) => setTodoValue(e.target.value)}
       />
-      <button className="todo-btn"></button>
+      <button className="todo-btn">+</button>
     </form>
   );
 };
