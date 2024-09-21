@@ -11,11 +11,8 @@ const TodoProvider = ({ children }) => {
   const [todo, setTodo] = useState(todoData.todos);
 
   function handleAddTodo(description) {
+    setTodo([...todo, { id: v4(), description: description }]);
     console.log(todo);
-    setTodo({
-      id: v4(),
-      description: description,
-    });
   }
   return (
     <TodoContext.Provider value={{ todo, handleAddTodo }}>
