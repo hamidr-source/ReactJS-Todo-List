@@ -6,14 +6,41 @@
   width: 80%;
   height: 40%;
   font-size: 2rem;
+  padding: 20px 20px;
+
 }
 
-.todo-input {
-  border: none;
-  outline: none;
-}
-
+.todo-input,
 .todo-btn {
   border: none;
   outline: none;
+  padding: 0;
+  padding-left: 10px;
+  height: 7vh;
+  background: var(--light-todo-color);
+  box-shadow: 5px 10px 200px var(--dark-color);
+}
+
+.todo-input {
+    width: 50%;
+    font-size: 2rem;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: var(--dark-color);
+}
+
+.todo-btn {
+    width: 5%;
+    padding: 10px;
+    font-size: inherit;
+    color: var(--dark-color);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.todo-btn:hover {
+    background-color: var(--dark-todo-color);
+    color: var(--light-color);
 }

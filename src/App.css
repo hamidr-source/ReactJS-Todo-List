@@ -1,15 +1,13 @@
 :root {
-  --bg-color: #555; 
-}
+  --light-color: #fff;
+  --dark-color: #1a2130;
+  --light-todo-color: #77b45fc7;
+  --dark-todo-color: #72fa56;
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
-html {
   height: 100%;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 body {
