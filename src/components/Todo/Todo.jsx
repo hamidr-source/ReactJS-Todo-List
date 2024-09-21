@@ -3,7 +3,7 @@ import { TodoContext } from "../context/Context";
 
 const Todo = () => {
   const { todo } = useContext(TodoContext);
-  
+
   return (
     <div className="todo-list">
       {todo.map((value, index) => (

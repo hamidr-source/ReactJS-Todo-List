@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../context/Context";
+import "./style.css"
 
 const AddTodo = () => {
   const [todoValue, setTodoValue] = useState("");
-  const {handleAddTodo}  = useContext(TodoContext);
+  const { handleAddTodo } = useContext(TodoContext);
 
   function handleSubmit(event) {
     event.preventDefault();
-    handleAddTodo(todoValue)
+    handleAddTodo(todoValue);
   }
 
   return (
