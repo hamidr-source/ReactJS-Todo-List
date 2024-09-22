@@ -17,8 +17,7 @@
   padding: 0;
   padding-left: 10px;
   height: 7vh;
-  background: var(--light-todo-color);
-  box-shadow: 5px 10px 200px var(--dark-color);
+  background: var(--dark-todo-color);
 }
 
 .todo-input {

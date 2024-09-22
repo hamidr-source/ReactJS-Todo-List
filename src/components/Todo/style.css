@@ -1,14 +1,3 @@
-i {
-  background-color: var(--dark-color);
-  background-color: #48ff00;
-  color: var(--dark-color);
-  cursor: pointer;
-}
-
-li {
-  list-style-type: none;
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -18,4 +7,34 @@ li {
 .todo-list {
   min-width: 30%;
   list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: var(--light-color);
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+  color: var(--dark-color);
+}
+
+.todo li {
+  flex: 1;
+  padding: .5rem;
+  list-style-type: none;
+}
+
+.trash,
+.check {
+  background: #f80101;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.check {
+  background: rgb(0, 248, 0);
 }

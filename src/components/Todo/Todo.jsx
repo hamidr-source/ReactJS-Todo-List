@@ -9,7 +9,7 @@ const Todo = () => {
     <div className="container">
       <div className="todo-list">
         {todo.map((value, index) => (
-          <div key={index}>
+          <div key={index} className="todo">
             <li>{value.description}</li>
             <i className="fas fa-check check"></i>
             <i className="fas fa-trash trash"></i>
