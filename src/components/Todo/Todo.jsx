@@ -1,14 +1,21 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../context/Context";
+import "./style.css";
 
 const Todo = () => {
   const { todo } = useContext(TodoContext);
 
   return (
-    <div className="todo-list">
-      {todo.map((value, index) => (
-        <div key={index}>{value.description}</div>
-      ))}
+    <div className="container">
+      <div className="todo-list">
+        {todo.map((value, index) => (
+          <div key={index}>
+            <li>{value.description}</li>
+            <i className="fas fa-check check"></i>
+            <i className="fas fa-trash trash"></i>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
