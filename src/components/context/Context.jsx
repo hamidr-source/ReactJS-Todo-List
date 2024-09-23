@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import { localData } from "./Constant";
-import Todo from "../Todo/Todo";
 
 export const TodoContext = createContext();
 
@@ -31,8 +30,24 @@ const TodoProvider = ({ children }) => {
     localData.add("tasks", todo)
   }
 
+
+  function handleCheckTodo (description) {
+    let todoIndex = todo.findIndex((element) => {
+      return element.description === description;
+    });
+
+    if (todo[todoIndex].isDone) {
+      todo[todoIndex].isDone = false
+    } else {
+      todo[todoIndex].isDone = true
+    }
+    
+    setTodo([...todo])
+    console.log(todo)
+  }
+
   return (
-    <TodoContext.Provider value={{ todo, handleAddTodo, handleDeleteTodo }}>
+    <TodoContext.Provider value={{ todo, handleAddTodo, handleDeleteTodo, handleCheckTodo }}>
       {children}
     </TodoContext.Provider>
   );
