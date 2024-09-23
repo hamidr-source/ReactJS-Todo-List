@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { localData } from "./Constant";
+import Todo from "../Todo/Todo";
 
 export const TodoContext = createContext();
 
@@ -9,24 +10,25 @@ export const todoData = {
 
 const TodoProvider = ({ children }) => {
   const [todo, setTodo] = useState(
-    JSON.parse(localStorage.getItem("tasks") || "[]")
+    JSON.parse(localData.get("tasks") || "[]")
   );
-
-  useEffect(() => {
-    localData.add("tasks", todo);
-  }, [todo]);
-
+  
+    useEffect(() => {
+      localData.add("tasks", todo);
+    }, [todo]);
+  
   function handleAddTodo(description) {
-    setTodo([...todo, { id: todo.length + 1, description: description }]);
-    console.log(todo);
+    setTodo([...todo, { description: description, isDone: false }]);
   }
-
-  function handleDeleteTodo(description) {
+  
+  function handleDeleteTodo (description) {
     let todoIndex = todo.findIndex((element) => {
       return element.description === description;
     });
-
+ 
     todo.splice(todoIndex, 1);
+    setTodo([...todo])
+    localData.add("tasks", todo)
   }
 
   return (
