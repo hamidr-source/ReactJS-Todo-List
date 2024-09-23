@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { localData } from "./Constant";
 
 export const TodoContext = createContext();
 
@@ -7,20 +8,17 @@ export const todoData = {
 };
 
 const TodoProvider = ({ children }) => {
-  const [todo, setTodo] = useState(todoData.todos);
+  const [todo, setTodo] = useState(
+    JSON.parse(localStorage.getItem("todos") || "[]")
+  );
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todo));
+    localData.add("todos", todo);
   }, [todo]);
 
-  useEffect(() => {
-    let todoLocalStorage = JSON.parse(localStorage.getItem("todos"))
-    console.log(todoLocalStorage)
-  })
-
-  console.log(todo)
   function handleAddTodo(description) {
     setTodo([...todo, { id: todo.length + 1, description: description }]);
+    console.log(todo);
   }
 
   return (
