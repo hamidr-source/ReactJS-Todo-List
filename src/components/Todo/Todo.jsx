@@ -5,6 +5,16 @@ import "./style.css";
 const Todo = () => {
   const { todo } = useContext(TodoContext);
 
+  function deleteTodo(e) {
+    let targetElement = e.target.parentElement.children[0].innerHTML;
+
+    let todoIndex = todo.findIndex((element) => {
+      return element.description === targetElement;
+    });
+
+    todo.splice(todoIndex, 1);
+  }
+
   return (
     <div className="container">
       <div className="todo-list">
@@ -12,7 +22,10 @@ const Todo = () => {
           <div key={index} className="todo">
             <li>{value.description}</li>
             <i className="fas fa-check check"></i>
-            <i className="fas fa-trash trash"></i>
+            <i
+              className="fas fa-trash trash"
+              onClick={(e) => deleteTodo(e)}
+            ></i>
           </div>
         ))}
       </div>
