@@ -4,15 +4,12 @@ import "./style.css";
 
 const Todo = () => {
   const { todo } = useContext(TodoContext);
+  const { handleDeleteTodo } = useContext(TodoContext);
 
   function deleteTodo(e) {
     let targetElement = e.target.parentElement.children[0].innerHTML;
 
-    let todoIndex = todo.findIndex((element) => {
-      return element.description === targetElement;
-    });
-
-    todo.splice(todoIndex, 1);
+    handleDeleteTodo(targetElement);
   }
 
   return (

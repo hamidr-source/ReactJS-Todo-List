@@ -9,11 +9,11 @@ export const todoData = {
 
 const TodoProvider = ({ children }) => {
   const [todo, setTodo] = useState(
-    JSON.parse(localStorage.getItem("todos") || "[]")
+    JSON.parse(localStorage.getItem("tasks") || "[]")
   );
 
   useEffect(() => {
-    localData.add("todos", todo);
+    localData.add("tasks", todo);
   }, [todo]);
 
   function handleAddTodo(description) {
@@ -21,8 +21,16 @@ const TodoProvider = ({ children }) => {
     console.log(todo);
   }
 
+  function handleDeleteTodo(description) {
+    let todoIndex = todo.findIndex((element) => {
+      return element.description === description;
+    });
+
+    todo.splice(todoIndex, 1);
+  }
+
   return (
-    <TodoContext.Provider value={{ todo, handleAddTodo }}>
+    <TodoContext.Provider value={{ todo, handleAddTodo, handleDeleteTodo }}>
       {children}
     </TodoContext.Provider>
   );
