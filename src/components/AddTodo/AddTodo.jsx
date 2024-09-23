@@ -9,6 +9,7 @@ const AddTodo = () => {
   function handleSubmit(event) {
     event.preventDefault();
     handleAddTodo(todoValue);
+    setTodoValue("")
   }
 
   return (
