@@ -43,7 +43,6 @@ const TodoProvider = ({ children }) => {
     }
     
     setTodo([...todo])
-    console.log(todo)
   }
 
   return (

@@ -6,6 +6,7 @@
 
 .todo-list {
   min-width: 30%;
+  max-width: 90%;
   list-style: none;
 }
 
@@ -41,7 +42,7 @@
 }
 
 .completed-task {
-  opacity: .6;
+  opacity: .4;
   text-decoration-line: line-through;
 }
 

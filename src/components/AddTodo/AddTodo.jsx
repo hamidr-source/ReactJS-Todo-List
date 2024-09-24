@@ -23,7 +23,9 @@ const AddTodo = () => {
         value={todoValue}
         onChange={(e) => setTodoValue(e.target.value)}
       />
-      <button className="todo-btn">+</button>
+      <button className="todo-btn">
+        <i className="fa-solid fa-plus"></i>
+      </button>
     </form>
   );
 };

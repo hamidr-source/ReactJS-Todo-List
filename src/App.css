@@ -1,6 +1,6 @@
 :root {
   --light-color: #fff;
-  --dark-color: #1a2130;
+  --dark-color: #1e1e1f;
   --light-todo-color: #77b45fc7;
   --dark-todo-color: #72fa56;
 
@@ -13,4 +13,5 @@
 
 body {
   background-color: var(--light-todo-color);
+  font-family: Arial, Helvetica, sans-serif;
 }

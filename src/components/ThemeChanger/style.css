@@ -1,0 +1,19 @@
+.theme {
+  position: absolute;
+  top: 2vh;
+  right: 5vw;
+  width: 5vw;
+  height: 10vh;
+  font-size: 3vh;
+  border: none;
+  cursor: pointer;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.dark {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
